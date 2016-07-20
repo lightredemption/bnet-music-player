@@ -1,22 +1,30 @@
 <html ng-app="bnet-music-player" lang="en-us">
 <head>
   <meta charset="utf-8" />
-  <link href="public/css/style.css" rel="stylesheet" />
-  <title>Bonjour</title>
 
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+  <link href="public/css/style.css" rel="stylesheet" />
+  <link href="public/css/bower.css" rel="stylesheet" />
+
+  <title>Classic Battle.net Music</title>
+
+  <script src="public/js/jquery.min.js"></script>
+  <script src="public/js/angular.min.js"></script>
+  <script src="public/js/bower.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-audio/1.7.2/angular.audio.min.js"></script>
 
   <script src="public/js/app.js"></script>
 
 </head>
 
-<body ng-controller="BaseController">
+<body ng-controller="BaseController" ng-style="{'background-image':'url({{ backgroundUrl }})'}">
 
   <div class="player">
 
-    asdasd
+    <button class="btn" ng-click="play()">
+      <span ng-if="nowPlaying"><i class="fa fa-pause" aria-hidden="true"></i></span>
+      <span ng-if="!nowPlaying"><i class="fa fa-play" aria-hidden="true"></i></span>
+    </button>
 
   </div>
 

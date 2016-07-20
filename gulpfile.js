@@ -23,7 +23,6 @@ const paths = {
     `bower_components/angular-background/dist/angular-background.min.js`
   ],
   bower_css: [
-    `bower_components/pure/base-min.css`,
   ]
 };
 

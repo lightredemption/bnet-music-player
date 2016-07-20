@@ -1,4 +1,4 @@
-var app = angular.module('bnet-music-player', [`ngAudio`]);
+var app = angular.module('bnet-music-player', [`ngAudio`, `720kb.background`]);
 app.controller(`BaseController`, [`$scope`, `ngAudio`, `$http`, ($scope, ngAudio, $http) => {
 
   $scope.nowPlaying = false;

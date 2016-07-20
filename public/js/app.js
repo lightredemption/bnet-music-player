@@ -13,7 +13,6 @@ app.controller('BaseController', ['$scope', 'ngAudio', '$http', function ($scope
 
   $scope.load = function () {
     $scope.song = ngAudio.load($scope.music[0].url);
-    $scope.backgroundUrl = 'public/img/wc3.jpg';
   };
 
   $scope.backgroundUrl = 'public/img/sc.jpg';

@@ -12,7 +12,6 @@ app.controller(`BaseController`, [`$scope`, `ngAudio`, `$http`, ($scope, ngAudio
 
   $scope.load = () => {
     $scope.song = ngAudio.load($scope.music[0].url);
-    $scope.backgroundUrl = `public/img/wc3.jpg`;
   };
 
   $scope.backgroundUrl = `public/img/sc.jpg`;

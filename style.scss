@@ -1,7 +1,14 @@
-html,body {
-  width: 100%;
-  height: 100%;
-  .player {
+html{
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
     text-align: center;
+
+    .player {
+      position: relative;
+      height: 40vh;
+      margin-top: 20vh;
+    }
   }
 }

@@ -10,6 +10,28 @@ html{
     margin: 0;
     color: white;
 
+    .playlist {
+      opacity: 0;
+      -webkit-transition: all .25s ease-out;
+      -moz-transition: all .25s ease-out;
+      -ms-transition: all .25s ease-out;
+      -o-transition: all .25s ease-out;
+      transition: all .25s ease-out;
+    }
+    .shown {
+      opacity: 1;
+      -webkit-transition: all .25s ease-in;
+      -moz-transition: all .25s ease-in;
+      -ms-transition: all .25s ease-in;
+      -o-transition: all .25s ease-in;
+      transition: all .25s ease-in;
+      -webkit-transform: translateY(10px);
+      -moz-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+      -o-transform: translateY(10px);
+      transform: translateY(10px);
+    }
+
     .player {
       position: relative;
       height: 15vh;
@@ -24,12 +46,16 @@ html{
         text-align: center;
         height: 4vh;
         color: white;
-        .slider {
-          margin-top: 1vh;
+        input {
+          width: 100%;
+        }
+        .volume {
+          height: 2vw;
+          position: absolute;
+          left: 1vw;
+          top: 0;
         }
         .list {
-          -webkit-filter: invert(100%);
-          filter: invert(100%);
           height: 1.5vw;
           position: absolute;
           right: 1vw;
@@ -53,6 +79,65 @@ html{
       }
     }
   }
+}
+
+// Tooltip from https://jsfiddle.net/greypants/zgCb7/
+
+.wrapper {
+  -webkit-transform: translateZ(0); /* webkit flicker fix */
+  -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
+}
+
+.wrapper .tooltip {
+  bottom: 50%;
+  color: #fff;
+  display: block;
+  left: -25px;
+  opacity: 0;
+  padding: 20px;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  -o-transform: translateY(10px);
+  transform: translateY(10px);
+  -webkit-transition: all .25s ease-out;
+  -moz-transition: all .25s ease-out;
+  -ms-transition: all .25s ease-out;
+  -o-transition: all .25s ease-out;
+  transition: all .25s ease-out;
+}
+
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.wrapper .tooltip:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.wrapper:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+/* IE can just show/hide with no transition */
+.lte8 .wrapper .tooltip {
+  display: none;
+}
+
+.lte8 .wrapper:hover .tooltip {
+  display: block;
 }
 
 /*

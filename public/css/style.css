@@ -13,6 +13,25 @@ html body {
   height: 100%;
   margin: 0;
   color: white; }
+  html body .playlist {
+    opacity: 0;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out; }
+  html body .shown {
+    opacity: 1;
+    -webkit-transition: all .25s ease-in;
+    -moz-transition: all .25s ease-in;
+    -ms-transition: all .25s ease-in;
+    -o-transition: all .25s ease-in;
+    transition: all .25s ease-in;
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    -o-transform: translateY(10px);
+    transform: translateY(10px); }
   html body .player {
     position: relative;
     height: 15vh;
@@ -25,11 +44,14 @@ html body {
       text-align: center;
       height: 4vh;
       color: white; }
-      html body .player .control .slider {
-        margin-top: 1vh; }
+      html body .player .control input {
+        width: 100%; }
+      html body .player .control .volume {
+        height: 2vw;
+        position: absolute;
+        left: 1vw;
+        top: 0; }
       html body .player .control .list {
-        -webkit-filter: invert(100%);
-        filter: invert(100%);
         height: 1.5vw;
         position: absolute;
         right: 1vw;
@@ -46,6 +68,59 @@ html body {
         height: 2vw;
         -webkit-filter: invert(50%);
         filter: invert(50%); }
+
+.wrapper {
+  -webkit-transform: translateZ(0);
+  /* webkit flicker fix */
+  -webkit-font-smoothing: antialiased;
+  /* webkit text rendering fix */ }
+
+.wrapper .tooltip {
+  bottom: 50%;
+  color: #fff;
+  display: block;
+  left: -25px;
+  opacity: 0;
+  padding: 20px;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  -o-transform: translateY(10px);
+  transform: translateY(10px);
+  -webkit-transition: all .25s ease-out;
+  -moz-transition: all .25s ease-out;
+  -ms-transition: all .25s ease-out;
+  -o-transition: all .25s ease-out;
+  transition: all .25s ease-out; }
+
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.wrapper .tooltip:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%; }
+
+.wrapper:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  transform: translateY(0px); }
+
+/* IE can just show/hide with no transition */
+.lte8 .wrapper .tooltip {
+  display: none; }
+
+.lte8 .wrapper:hover .tooltip {
+  display: block; }
 
 /*
 Offsets from https://raw.githubusercontent.com/tilomitra/pure/d7f85e37abec3fdab14a541305ad05783159655c/src/grids/css/grids-offsets.css

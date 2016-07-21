@@ -1,4 +1,4 @@
-var app = angular.module('bnet-music-player', [`ngAudio`, `720kb.background`, `rzModule`]);
+var app = angular.module('bnet-music-player', [`ngAudio`, `720kb.background`]);
 app.filter('secondsToDateTime', [function() {
   return function(seconds) {
     return new Date(1970, 0, 1).setSeconds(seconds);
@@ -8,7 +8,9 @@ app.controller(`BaseController`, [`$scope`, `ngAudio`, `$http`, `$interval`,
   ($scope, ngAudio, $http, $interval) => {
 
     $scope.nowPlaying = true;
+    $scope.listShown = true;
     $scope.playImg = `public/img/Pause.png`;
+    $scope.volumeImg = `public/img/High Volume.png`;
 
     $http.get(`music.json`)
     .then((res) => {
@@ -20,25 +22,12 @@ app.controller(`BaseController`, [`$scope`, `ngAudio`, `$http`, `$interval`,
 
     $scope.load = () => {
       $scope.song = ngAudio.load($scope.current.url);
-      $scope.song.volume = 0.5;
-      $scope.progressSlider.value = $scope.song.progress * 1000;
       $scope.song.play();
-      $scope.progressSlider = {
-        value: 0,
-        options: {
-          ceil: 1000,
-          hideLimitLabels: true,
-          hidePointerLabels: true,
-          onChange: $scope.jump()
-        }
-      };
-
-      $scope.volumeSlider = 1;
     };
 
     $scope.backgroundUrl = `public/img/sc.jpg`;
 
-    $scope.play = () => {
+    $scope.ply = () => {
       if ($scope.nowPlaying) {
         $scope.song.pause();
         $scope.playImg = `public/img/Play.png`;
@@ -72,18 +61,26 @@ app.controller(`BaseController`, [`$scope`, `ngAudio`, `$http`, `$interval`,
 
     $scope.prev = () => {
       $scope.song.stop();
-      if ($scope.position === 0) {
-        $scope.position = $scope.music.length - 1;
-      } else {
-        $scope.position = $scope.position-=1;
+      if ($scope.song.progress < 0.1) {
+        if ($scope.position === 0) {
+          $scope.position = $scope.music.length - 1;
+        } else {
+          $scope.position = $scope.position-=1;
+        }
+        $scope.current = $scope.music[$scope.position];
       }
-      $scope.current = $scope.music[$scope.position];
+
       $scope.load();
+
     };
 
     $scope.jump = () => {
       $scope.song.progress = $scope.value / 1000;
     }
+
+    $scope.togList = () => {
+      $scope.listShown = !$scope.listShown;
+    };
 
     $scope.togShuffle = () => {
       $scope.shuffle = !$scope.shuffle;
@@ -96,10 +93,22 @@ app.controller(`BaseController`, [`$scope`, `ngAudio`, `$http`, `$interval`,
     };
 
     $interval(() => {
-      $scope.progressSlider.value = $scope.song.progress * 1000;
+      let volume = $scope.song.volume
+      if (volume > 0.66) {
+        $scope.volumeImg = `public/img/High Volume.png`;
+      }
+      if (volume <= 0.66 && volume > 0.33) {
+        $scope.volumeImg = `public/img/Medium Volume.png`;
+      }
+      if (volume <= 0.33 && volume > 0) {
+        $scope.volumeImg = `public/img/Low Volume.png`;
+      }
+      if (volume === 0) {
+        $scope.volumeImg = `public/img/Mute.png`;
+      }
       if ($scope.song.remaining < 1) {
         $scope.next();
       }
-    }, 350)
+    }, 200)
 
   }]);

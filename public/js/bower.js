@@ -1,7 +1,5 @@
 'use strict';
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
 angular.module('ngAudio', []).directive('ngAudio', ['$compile', '$q', 'ngAudio', function ($compile, $q, ngAudio) {
     return {
         restrict: 'AEC',

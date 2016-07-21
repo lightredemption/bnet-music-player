@@ -14,7 +14,11 @@ html body {
   margin: 0;
   color: white; }
   html body .playlist {
+    margin-top: 0;
+    background: #0A1117;
     opacity: 0;
+    height: 30vh;
+    overflow: scroll;
     -webkit-transition: all .25s ease-out;
     -moz-transition: all .25s ease-out;
     -ms-transition: all .25s ease-out;
@@ -26,13 +30,9 @@ html body {
     -moz-transition: all .25s ease-in;
     -ms-transition: all .25s ease-in;
     -o-transition: all .25s ease-in;
-    transition: all .25s ease-in;
-    -webkit-transform: translateY(10px);
-    -moz-transform: translateY(10px);
-    -ms-transform: translateY(10px);
-    -o-transform: translateY(10px);
-    transform: translateY(10px); }
+    transition: all .25s ease-in; }
   html body .player {
+    margin-bottom: 0;
     position: relative;
     height: 15vh;
     margin-top: 20vh; }

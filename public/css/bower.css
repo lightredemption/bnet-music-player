@@ -1,162 +1,222 @@
-/*!
-Pure v0.6.0
-Copyright 2014 Yahoo! Inc. All rights reserved.
-Licensed under the BSD License.
-https://github.com/yahoo/pure/blob/master/LICENSE.md
-*/
-/*!
-normalize.css v^3.0 | MIT License | git.io/normalize
-Copyright (c) Nicolas Gallagher and Jonathan Neal
-*/
-/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
-html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%; }
-
-body {
-  margin: 0; }
-
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-  display: block; }
-
-audio, canvas, progress, video {
-  display: inline-block;
-  vertical-align: baseline; }
-
-audio:not([controls]) {
-  display: none;
-  height: 0; }
-
-[hidden], template {
-  display: none; }
-
-a {
-  background-color: transparent; }
-
-a:active, a:hover {
-  outline: 0; }
-
-abbr[title] {
-  border-bottom: 1px dotted; }
-
-b, strong {
-  font-weight: 700; }
-
-dfn {
-  font-style: italic; }
-
-h1 {
-  font-size: 2em;
-  margin: .67em 0; }
-
-mark {
-  background: #ff0;
-  color: #000; }
-
-small {
-  font-size: 80%; }
-
-sub, sup {
-  font-size: 75%;
-  line-height: 0;
+/*! angularjs-slider - v5.4.1 -  (c) Rafal Zajac <rzajac@gmail.com>, Valentin Hervieu <valentin@hervieu.me>, Jussi Saarivirta <jusasi@gmail.com>, Angelin Sirbu <angelin.sirbu@gmail.com> -  https://github.com/angular-slider/angularjs-slider -  2016-07-17 */
+.rzslider {
   position: relative;
-  vertical-align: baseline; }
+  display: inline-block;
+  width: 100%;
+  height: 4px;
+  margin: 35px 0 15px 0;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
-sup {
-  top: -.5em; }
+.rzslider.with-legend {
+  margin-bottom: 40px; }
 
-sub {
-  bottom: -.25em; }
+.rzslider[disabled] {
+  cursor: not-allowed; }
 
-img {
-  border: 0; }
+.rzslider[disabled] .rz-pointer {
+  cursor: not-allowed;
+  background-color: #d8e0f3; }
 
-svg:not(:root) {
-  overflow: hidden; }
+.rzslider span {
+  position: absolute;
+  display: inline-block;
+  white-space: nowrap; }
 
-figure {
-  margin: 1em 40px; }
+.rzslider .rz-base {
+  width: 100%;
+  height: 100%;
+  padding: 0; }
 
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0; }
+.rzslider .rz-bar-wrapper {
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 32px;
+  padding-top: 16px;
+  margin-top: -16px;
+  box-sizing: border-box; }
 
-pre {
-  overflow: auto; }
+.rzslider .rz-bar-wrapper.rz-draggable {
+  cursor: move; }
 
-code, kbd, pre, samp {
-  font-family: monospace,monospace;
-  font-size: 1em; }
+.rzslider .rz-bar {
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 4px;
+  background: #d8e0f3;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px; }
 
-button, input, optgroup, select, textarea {
-  color: inherit;
-  font: inherit;
-  margin: 0; }
+.rzslider .rz-bar.rz-selection {
+  z-index: 2;
+  background: #0db9f0;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px; }
 
-button {
-  overflow: visible; }
+.rzslider .rz-pointer {
+  top: -14px;
+  z-index: 3;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  background-color: #0db9f0;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px; }
 
-button, select {
-  text-transform: none; }
+.rzslider .rz-pointer:after {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  content: ''; }
 
-button, html input[type=button], input[type=reset], input[type=submit] {
-  -webkit-appearance: button;
-  cursor: pointer; }
+.rzslider .rz-pointer:hover:after {
+  background-color: #fff; }
 
-button[disabled], html input[disabled] {
+.rzslider .rz-pointer.rz-active {
+  z-index: 4; }
+
+.rzslider .rz-pointer.rz-active:after {
+  background-color: #451aff; }
+
+.rzslider .rz-bubble {
+  bottom: 16px;
+  padding: 1px 3px;
+  color: #55637d;
   cursor: default; }
 
-button::-moz-focus-inner, input::-moz-focus-inner {
-  border: 0;
-  padding: 0; }
+.rzslider .rz-bubble.rz-selection {
+  top: 16px; }
 
-input {
-  line-height: normal; }
+.rzslider .rz-bubble.rz-limit {
+  color: #55637d; }
 
-input[type=checkbox], input[type=radio] {
+.rzslider .rz-ticks {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  z-index: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 0;
+  padding: 0 11px;
+  margin: 0;
+  list-style: none;
   box-sizing: border-box;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.rzslider .rz-ticks .rz-tick {
+  width: 10px;
+  height: 10px;
+  text-align: center;
+  cursor: pointer;
+  background: #d8e0f3;
+  border-radius: 50%; }
+
+.rzslider .rz-ticks .rz-tick.rz-selected {
+  background: #0db9f0; }
+
+.rzslider .rz-ticks .rz-tick .rz-tick-value {
+  position: absolute;
+  top: -30px;
+  transform: translate(-50%, 0); }
+
+.rzslider .rz-ticks .rz-tick .rz-tick-legend {
+  position: absolute;
+  top: 24px;
+  max-width: 50px;
+  white-space: normal;
+  transform: translate(-50%, 0); }
+
+.rzslider .rz-ticks.rz-ticks-values-under .rz-tick-value {
+  top: initial;
+  bottom: -40px; }
+
+.rzslider.rz-vertical {
+  position: relative;
+  width: 4px;
+  height: 100%;
+  padding: 0;
+  margin: 0 20px;
+  vertical-align: baseline; }
+
+.rzslider.rz-vertical .rz-base {
+  width: 100%;
+  height: 100%;
   padding: 0; }
 
-input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
-  height: auto; }
+.rzslider.rz-vertical .rz-bar-wrapper {
+  top: auto;
+  left: 0;
+  width: 32px;
+  height: 100%;
+  padding: 0 0 0 16px;
+  margin: 0 0 0 -16px; }
 
-input[type=search] {
-  -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box; }
+.rzslider.rz-vertical .rz-bar {
+  bottom: 0;
+  left: auto;
+  width: 4px;
+  height: 100%; }
 
-input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
-  -webkit-appearance: none; }
+.rzslider.rz-vertical .rz-pointer {
+  top: auto;
+  bottom: 0;
+  left: -14px !important; }
 
-fieldset {
-  border: 1px solid silver;
-  margin: 0 2px;
-  padding: .35em .625em .75em; }
+.rzslider.rz-vertical .rz-bubble {
+  bottom: 0;
+  left: 16px !important;
+  margin-left: 3px; }
 
-legend {
-  border: 0;
-  padding: 0; }
+.rzslider.rz-vertical .rz-bubble.rz-selection {
+  top: auto;
+  left: 16px !important; }
 
-textarea {
-  overflow: auto; }
+.rzslider.rz-vertical .rz-ticks {
+  top: 0;
+  left: -3px;
+  z-index: 1;
+  width: 0;
+  height: 100%;
+  padding: 11px 0;
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse; }
 
-optgroup {
-  font-weight: 700; }
+.rzslider.rz-vertical .rz-ticks .rz-tick {
+  vertical-align: middle; }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
+.rzslider.rz-vertical .rz-ticks .rz-tick .rz-tick-value {
+  top: initial;
+  left: 22px;
+  transform: translate(0, -28%); }
 
-td, th {
-  padding: 0; }
+.rzslider.rz-vertical .rz-ticks .rz-tick .rz-tick-legend {
+  top: initial;
+  right: 24px;
+  max-width: none;
+  white-space: nowrap;
+  transform: translate(0, -28%); }
 
-.hidden, [hidden] {
-  display: none !important; }
-
-.pure-img {
-  max-width: 100%;
-  height: auto;
-  display: block; }
+.rzslider.rz-vertical .rz-ticks.rz-ticks-values-under .rz-tick-value {
+  right: 12px;
+  bottom: initial;
+  left: initial; }

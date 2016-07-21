@@ -11,7 +11,8 @@ html body {
   /* Standard syntax */
   width: 100%;
   height: 100%;
-  margin: 0; }
+  margin: 0;
+  color: white; }
   html body .player {
     position: relative;
     height: 15vh;
@@ -24,17 +25,16 @@ html body {
       text-align: center;
       height: 4vh;
       color: white; }
+      html body .player .control .slider {
+        margin-top: 1vh; }
       html body .player .control .list {
         -webkit-filter: invert(100%);
         filter: invert(100%);
-        height: 2vh;
-        margin-top: 1vh;
+        height: 1.5vw;
         position: absolute;
         right: 1vw;
         top: 0; }
       html body .player .control #play {
-        height: 5vh !important;
-        margin-top: 0;
         padding-left: 1px;
         border-radius: 50%;
         background-color: #CDB489; }
@@ -43,13 +43,9 @@ html body {
         filter: invert(100%); }
       html body .player .control img {
         margin-top: 1vh;
-        height: 3vh;
+        height: 2vw;
         -webkit-filter: invert(50%);
         filter: invert(50%); }
-  html body .playlist {
-    height: 30vh;
-    border: 1px solid white;
-    overflow: scroll; }
 
 /*
 Offsets from https://raw.githubusercontent.com/tilomitra/pure/d7f85e37abec3fdab14a541305ad05783159655c/src/grids/css/grids-offsets.css

@@ -5,6 +5,7 @@
 
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/5.4.0/rzslider.min.css"/>
 
   <link href="public/css/style.css" rel="stylesheet" />
 
@@ -13,7 +14,7 @@
   <script src="public/js/jquery.min.js"></script>
   <script src="public/js/angular.min.js"></script>
   <script src="public/js/bower.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-audio/1.7.2/angular.audio.min.js"></script>
+  <script src="https://rawgit.com/rzajac/angularjs-slider/master/dist/rzslider.js"></script>
 
   <script src="public/js/app.js"></script>
 
@@ -23,12 +24,23 @@
 
   <div class="wrapper pure-u-1 pure-u-sm-1 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-4 offset-md-1-4 offset-lg-1-6 offset-xl-3-8">
     <div class="player pure-g" dynamic-background="" background-image="{{ backgroundUrl }}">
-      <div class="pure-u-1 control title">
+      <div class="pure-u-1-5 control volume">
+
+      </div>
+      <div class="pure-u-3-5 control title">
         <span class="tag">{{ current.tag }}:</span> {{ current.name }}
+      </div>
+      <div class="pure-u-1-5 control playlist">
         <img ng-src="public/img/Playlist.png" alt="list" class="list"/>
       </div>
-      <div class="pure-u-1 control">
-        {{ song.currentTime | secondsToDateTime | date:'mm:ss' }} - {{ song.remaining + song.currentTime | secondsToDateTime | date:'mm:ss' }}
+      <div class="pure-u-1-5 control list">
+        {{ song.currentTime | secondsToDateTime | date:'mm:ss' }}
+      </div>
+      <div class="pure-u-3-5 control">
+        <rzslider rz-slider-model="progressSlider.value" rz-slider-options="progressSlider.options" class="slider"></rzslider>
+      </div>
+      <div class="pure-u-1-5 control list">
+        {{ song.remaining + song.currentTime | secondsToDateTime | date:'mm:ss' }}
       </div>
       <div class="pure-u-1-5 control">
         <img ng-src="public/img/Repeat.png" alt="repeat" ng-click="togRepeat()" ng-class="{ 'run': repeat }"/>
@@ -48,7 +60,8 @@
 
     </div>
     <div class="playlist">
-
+      {{ song.volume }}
+      {{ song.progress }}
     </div>
   </div>
 

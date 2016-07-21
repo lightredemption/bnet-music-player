@@ -1,4 +1,4 @@
-var app = angular.module('bnet-music-player', [`ngAudio`, `720kb.background`]);
+var app = angular.module('bnet-music-player', [`ngAudio`, `720kb.background`, `rzModule`]);
 app.filter('secondsToDateTime', [function() {
   return function(seconds) {
     return new Date(1970, 0, 1).setSeconds(seconds);
@@ -20,7 +20,20 @@ app.controller(`BaseController`, [`$scope`, `ngAudio`, `$http`, `$interval`,
 
     $scope.load = () => {
       $scope.song = ngAudio.load($scope.current.url);
+      $scope.song.volume = 0.5;
+      $scope.progressSlider.value = $scope.song.progress * 1000;
       $scope.song.play();
+      $scope.progressSlider = {
+        value: 0,
+        options: {
+          ceil: 1000,
+          hideLimitLabels: true,
+          hidePointerLabels: true,
+          onChange: $scope.jump()
+        }
+      };
+
+      $scope.volumeSlider = 1;
     };
 
     $scope.backgroundUrl = `public/img/sc.jpg`;
@@ -68,6 +81,10 @@ app.controller(`BaseController`, [`$scope`, `ngAudio`, `$http`, `$interval`,
       $scope.load();
     };
 
+    $scope.jump = () => {
+      $scope.song.progress = $scope.value / 1000;
+    }
+
     $scope.togShuffle = () => {
       $scope.shuffle = !$scope.shuffle;
       $scope.repeat = false;
@@ -79,9 +96,10 @@ app.controller(`BaseController`, [`$scope`, `ngAudio`, `$http`, `$interval`,
     };
 
     $interval(() => {
+      $scope.progressSlider.value = $scope.song.progress * 1000;
       if ($scope.song.remaining < 1) {
         $scope.next();
       }
-    }, 500)
+    }, 350)
 
   }]);

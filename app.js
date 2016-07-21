@@ -74,8 +74,11 @@ app.controller(`BaseController`, [`$scope`, `ngAudio`, `$http`, `$interval`,
 
     };
 
-    $scope.jump = () => {
-      $scope.song.progress = $scope.value / 1000;
+    $scope.jump = (index) => {
+      $scope.song.stop();
+      $scope.position = index;
+      $scope.current = $scope.music[$scope.position];
+      $scope.load();
     }
 
     $scope.togList = () => {

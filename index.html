@@ -61,8 +61,8 @@
 
     </div>
     <div class="playlist" ng-class="{ 'shown': listShown }">
-      <div ng-repeat="msc in music">
-        {{ msc.tag }} {{ msc.name }}
+      <div ng-repeat="msc in music track by $index" ng-click="jump($index)">
+        <span>{{ msc.tag }}</span> {{ msc.name }}
       </div>
     </div>
   </div>

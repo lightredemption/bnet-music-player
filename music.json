@@ -15,5 +15,73 @@
     "name": "Terran 3",
     "tag": "sc",
     "url": "http://classic.battle.net/supersecrest/terran3.mp3"
+  }, {
+    "name": "Terran Ready Room",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/trdyroom.mp3"
+  }, {
+    "name": "Terran Defeat",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/tdefeat.mp3"
+  }, {
+    "name": "Terran Victory",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/tvict.mp3"
+  }, {
+    "name": "Protoss 1",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/Protoss1.mp3"
+  }, {
+    "name": "Protoss 2",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/Protoss2.mp3"
+  }, {
+    "name": "Protoss 3",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/Protoss3.mp3"
+  }, {
+    "name": "Protoss Ready Room",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/prdyroom.mp3"
+  }, {
+    "name": "Protoss Defeat",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/pdefeat.mp3"
+  }, {
+    "name": "Protoss Victory",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/pvict.mp3"
+  }, {
+    "name": "Zerg 1",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/Zerg1.mp3"
+  }, {
+    "name": "Zerg 2",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/Zerg2.mp3"
+  }, {
+    "name": "Zerg 3",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/Zerg3.mp3"
+  }, {
+    "name": "Zerg Ready Room",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/zrdyroom.mp3"
+  }, {
+    "name": "Zerg Defeat",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/zdefeat.mp3"
+  }, {
+    "name": "Zerg Victory",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/zvict.mp3"
+  }, {
+    "name": "Radio Free Zerg",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/RadioFreeZerg.mp3"
+  }, {
+    "name": "Brood War Intro",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/BroodWarIntro.mp3"
   }
 ]

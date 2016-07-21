@@ -1,7 +1,19 @@
 [
   {
-    "id": 1,
+    "name": "Title Screen",
     "tag": "sc",
     "url": "http://classic.battle.net/supersecrest/title.mp3"
+  }, {
+    "name": "Terran 1",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/terran1.mp3"
+  }, {
+    "name": "Terran 2",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/terran2.mp3"
+  }, {
+    "name": "Terran 3",
+    "tag": "sc",
+    "url": "http://classic.battle.net/supersecrest/terran3.mp3"
   }
 ]

@@ -1,15 +1,51 @@
 html body {
-  background-color: #2C2927;
+  background: #000000;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #000000, #0A1117);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #000000, #0A1117);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #000000, #0A1117);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #000000, #0A1117);
+  /* Standard syntax */
   width: 100%;
   height: 100%;
   margin: 0; }
   html body .player {
     position: relative;
-    height: 10vh;
+    height: 15vh;
     margin-top: 20vh; }
-    html body .player img {
-      -webkit-filter: invert(100%);
-      filter: invert(100%); }
+    html body .player .title {
+      padding-top: 1vh; }
+      html body .player .title .tag {
+        text-transform: uppercase; }
+    html body .player .control {
+      text-align: center;
+      height: 4vh;
+      color: white; }
+      html body .player .control .list {
+        -webkit-filter: invert(100%);
+        filter: invert(100%);
+        height: 2vh;
+        margin-top: 1vh;
+        position: absolute;
+        right: 1vw;
+        top: 0; }
+      html body .player .control #play {
+        height: 5vh !important;
+        margin-top: 0;
+        padding-left: 1px;
+        border-radius: 50%;
+        background-color: #CDB489; }
+      html body .player .control .run {
+        -webkit-filter: invert(100%);
+        filter: invert(100%); }
+      html body .player .control img {
+        margin-top: 1vh;
+        height: 3vh;
+        -webkit-filter: invert(50%);
+        filter: invert(50%); }
   html body .playlist {
     height: 30vh;
     border: 1px solid white;

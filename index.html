@@ -23,20 +23,27 @@
 
   <div class="wrapper pure-u-1 pure-u-sm-1 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-4 offset-md-1-4 offset-lg-1-6 offset-xl-3-8">
     <div class="player pure-g" dynamic-background="" background-image="{{ backgroundUrl }}">
-      <div class="pure-1-5">
-        <img ng-src="public/img/Repeat.png" alt="repeat"/>
+      <div class="pure-u-1 control title">
+        <span class="tag">{{ current.tag }}:</span> {{ current.name }}
+        <img ng-src="public/img/Playlist.png" alt="list" class="list"/>
       </div>
-      <div class="pure-1-5">
-        <img ng-src="public/img/Rewind.png" alt="repeat"/>
+      <div class="pure-u-1 control">
+        {{ song.currentTime | secondsToDateTime | date:'mm:ss' }} - {{ song.remaining + song.currentTime | secondsToDateTime | date:'mm:ss' }}
       </div>
-      <div class="pure-1-5">
-        <img ng-src="public/img/Play.png" alt="repeat" ng-click="play()"/>
+      <div class="pure-u-1-5 control">
+        <img ng-src="public/img/Repeat.png" alt="repeat" ng-click="togRepeat()" ng-class="{ 'run': repeat }"/>
       </div>
-      <div class="pure-1-5">
-        <img ng-src="public/img/Fast Forward.png" alt="repeat"/>
+      <div class="pure-u-1-5 control">
+        <img ng-src="public/img/Rewind.png" alt="rewind" ng-click="prev()" class="run"/>
       </div>
-      <div class="pure-1-5">
-        <img ng-src="public/img/Shuffle.png" alt="repeat"/>
+      <div class="pure-u-1-5 control">
+        <img ng-src="{{playImg}}" alt="play" ng-click="play()" id="play" class="run"/>
+      </div>
+      <div class="pure-u-1-5 control">
+        <img ng-src="public/img/Fast Forward.png" alt="forward" ng-click="next()" class="run"/>
+      </div>
+      <div class="pure-u-1-5 control">
+        <img ng-src="public/img/Shuffle.png" alt="shuffle" ng-click="togShuffle()" ng-class="{ 'run': shuffle }"/>
       </div>
 
     </div>

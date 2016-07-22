@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('bnet-music-player', ['ngAudio', '720kb.background']);
+var app = angular.module('bnet-music-player', ['ngAudio']);
 app.filter('secondsToDateTime', [function () {
   return function (seconds) {
     return new Date(1970, 0, 1).setSeconds(seconds);
@@ -10,7 +10,6 @@ app.controller('BaseController', ['$scope', 'ngAudio', '$http', '$interval', fun
 
   $scope.nowPlaying = true;
   $scope.listShown = true;
-  $scope.playImg = 'public/img/Pause.png';
   $scope.volumeImg = 'public/img/High Volume.png';
 
   $http.get('music.json').then(function (res) {
@@ -23,17 +22,14 @@ app.controller('BaseController', ['$scope', 'ngAudio', '$http', '$interval', fun
   $scope.load = function () {
     $scope.song = ngAudio.load($scope.current.url);
     $scope.song.play();
+    $scope.nowPlaying = true;
   };
-
-  $scope.backgroundUrl = 'public/img/sc.jpg';
 
   $scope.ply = function () {
     if ($scope.nowPlaying) {
       $scope.song.pause();
-      $scope.playImg = 'public/img/Play.png';
     } else {
       $scope.song.play();
-      $scope.playImg = 'public/img/Pause.png';
     }
     $scope.nowPlaying = !$scope.nowPlaying;
   };

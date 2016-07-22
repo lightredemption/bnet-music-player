@@ -478,36 +478,3 @@ angular.module('ngAudio', []).directive('ngAudio', ['$compile', '$q', 'ngAudio',
         return output;
     };
 });
-
-/*!
- * Angular Background v0.1.0
- *
- * An Angular.js directive to dynamically switch the background of the element.
- *
- * Released under the MIT license
- * www.opensource.org/licenses/MIT
- *
- * Brought to you by 720kb.net
- *
- * 2015-03-13
- */
-
-!function (a) {
-    "use strict";
-    a.module("720kb.background", []).directive("dynamicBackground", [function () {
-        return { restrict: "A", link: function link(b, c, d) {
-                b.setBg = function () {
-                    a.element(c[0]).css({ "background-color": d.backgroundColor, "background-image": "url(" + d.backgroundImage + ")", "background-repeat": d.backgroundRepeat, "background-position": d.backgroundPosition, "background-size": d.backgroundSize, "background-attachment": d.backgroundAttachment, "background-origin": d.backgroundOrigin, "background-clip": d.backgroundClip, background: d.background });
-                }, b.launchDynamicBg = function () {
-                    d.backgroundOnEvent ? a.element(c[0]).bind(d.backgroundOnEvent, function () {
-                        b.setBg();
-                    }) : b.setBg();
-                }, a.forEach(["backgroundImage", "backgroundColor", "backgroundSize", "backgroundPosition", "backgroundClip", "backgroundAttachment", "backgroundOnEvent", "backgroundRepeat", "backgroundOrigin", "background"], function (a) {
-                    d.$observe(a, function (a) {
-                        a && b.launchDynamicBg();
-                    });
-                });
-            } };
-    }]);
-}(angular);
-//# sourceMappingURL=angular-background.min.js.map

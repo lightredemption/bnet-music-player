@@ -1,4 +1,4 @@
-var app = angular.module('bnet-music-player', [`ngAudio`, `720kb.background`]);
+var app = angular.module('bnet-music-player', [`ngAudio`]);
 app.filter('secondsToDateTime', [function() {
   return function(seconds) {
     return new Date(1970, 0, 1).setSeconds(seconds);
@@ -24,8 +24,6 @@ app.controller(`BaseController`, [`$scope`, `ngAudio`, `$http`, `$interval`,
       $scope.song.play();
       $scope.nowPlaying = true;
     };
-
-    $scope.backgroundUrl = `public/img/sc.jpg`;
 
     $scope.ply = () => {
       if ($scope.nowPlaying) {

@@ -50,7 +50,7 @@
         <img ng-src="public/img/Rewind.png" alt="rewind" ng-click="prev()" class="run"/>
       </div>
       <div class="pure-u-1-5 control">
-        <img ng-src="{{playImg}}" alt="play" ng-click="ply()" id="play" class="run"/>
+        <img ng-src="{{ nowPlaying && 'public/img/Pause.png' || 'public/img/Play.png' }}" alt="play" ng-click="ply()" id="play" class="run"/>
       </div>
       <div class="pure-u-1-5 control">
         <img ng-src="public/img/Fast Forward.png" alt="forward" ng-click="next()" class="run"/>

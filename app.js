@@ -9,7 +9,6 @@ app.controller(`BaseController`, [`$scope`, `ngAudio`, `$http`, `$interval`,
 
     $scope.nowPlaying = true;
     $scope.listShown = true;
-    $scope.playImg = `public/img/Pause.png`;
     $scope.volumeImg = `public/img/High Volume.png`;
 
     $http.get(`music.json`)
@@ -23,6 +22,7 @@ app.controller(`BaseController`, [`$scope`, `ngAudio`, `$http`, `$interval`,
     $scope.load = () => {
       $scope.song = ngAudio.load($scope.current.url);
       $scope.song.play();
+      $scope.nowPlaying = true;
     };
 
     $scope.backgroundUrl = `public/img/sc.jpg`;
@@ -30,10 +30,8 @@ app.controller(`BaseController`, [`$scope`, `ngAudio`, `$http`, `$interval`,
     $scope.ply = () => {
       if ($scope.nowPlaying) {
         $scope.song.pause();
-        $scope.playImg = `public/img/Play.png`;
       } else {
         $scope.song.play();
-        $scope.playImg = `public/img/Pause.png`;
       }
       $scope.nowPlaying = !$scope.nowPlaying;
     };

@@ -6,6 +6,7 @@ html body {
   margin: 0;
   color: white; }
   html body .playlist {
+    padding-top: 15px;
     text-align: left;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -57,13 +58,15 @@ html body {
         position: absolute;
         left: 15px;
         -webkit-filter: invert(50%);
-        filter: invert(50%); }
+        filter: invert(50%);
+        height: 5vh; }
       html body .player .control #shuffle {
         padding-top: 3vh;
         position: absolute;
         right: 15px;
         -webkit-filter: invert(50%);
-        filter: invert(50%); }
+        filter: invert(50%);
+        height: 5vh; }
       html body .player .control #prev, html body .player .control #next {
         padding-bottom: 1vh;
         height: 7vh; }
@@ -71,7 +74,6 @@ html body {
         height: 10vh; }
       html body .player .control img {
         margin-top: 1vh;
-        height: 20pt;
         -webkit-filter: invert(100%);
         filter: invert(100%); }
     html body .player .progress {

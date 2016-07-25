@@ -3,8 +3,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+  <link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
 
   <link href="public/css/style.css" rel="stylesheet" />
 
@@ -41,7 +41,7 @@
         <input type="range" min="0" max="1" step="0.01" ng-model="song.progress">
       </div>
       <div class="pure-u-1-6 control list">
-        {{ song.remaining + song.currentTime | secondsToDateTime | date:'mm:ss' }}
+        {{ song.remaining ? song.remaining + song.currentTime : '' | secondsToDateTime | date:'mm:ss'}}
       </div>
       <div class="pure-u-1-5 control">
         <img ng-src="public/img/Repeat.png" alt="repeat" ng-click="togRepeat()" ng-class="{ 'run': repeat }"/>

@@ -1,87 +1,37 @@
-html body {
-  text-align: center;
-  background: #292728;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  color: white; }
-  html body .playlist {
-    padding-top: 15px;
-    text-align: left;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    margin-top: 0;
-    background: #242321;
-    opacity: 0.8;
-    height: 50vh;
+body {
+  background-color: #3598DB;
+  background-image: url("../img/blizz-wp.jpg");
+  font-family: 'Open Sans', sans-serif; }
+  body .list {
+    box-shadow: 0 0 1px 1px lightgray;
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding-top: 20px;
+    height: 40%; }
+    body .list td {
+      cursor: pointer; }
+  body .tab-content {
     overflow: scroll;
-    -webkit-transition: all .25s ease-out;
-    -moz-transition: all .25s ease-out;
-    -ms-transition: all .25s ease-out;
-    -o-transition: all .25s ease-out;
-    transition: all .25s ease-out; }
-    html body .playlist .odd {
-      background-color: 313133; }
-    html body .playlist .current {
-      color: #87604e; }
-    html body .playlist .track {
-      padding: 15px 15px 15px 15px;
-      height: 10px;
-      line-height: 0.8; }
-  html body .player {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    background: #242321;
-    opacity: 0.8;
-    margin-bottom: 0;
-    position: relative;
-    margin-top: 10vh;
-    height: 25vh;
-    padding-left: 15px;
-    padding-right: 15px; }
-    html body .player .title {
-      text-align: center;
-      padding-top: 1vh;
-      color: white; }
-      html body .player .title .tag {
-        text-transform: uppercase; }
-    html body .player .control {
-      text-align: center;
-      color: white;
-      padding: 0 0 0 0;
-      height: 10vh; }
-      html body .player .control .run {
-        -webkit-filter: invert(100%) !important;
-        filter: invert(100%) !important; }
-      html body .player .control #repeat {
-        padding-top: 3vh;
-        position: absolute;
-        left: 15px;
-        -webkit-filter: invert(50%);
-        filter: invert(50%);
-        height: 5vh; }
-      html body .player .control #shuffle {
-        padding-top: 3vh;
-        position: absolute;
-        right: 15px;
-        -webkit-filter: invert(50%);
-        filter: invert(50%);
-        height: 5vh; }
-      html body .player .control #prev, html body .player .control #next {
-        padding-bottom: 1vh;
-        height: 7vh; }
-      html body .player .control #play {
-        height: 10vh; }
-      html body .player .control img {
-        margin-top: 1vh;
-        -webkit-filter: invert(100%);
-        filter: invert(100%); }
-    html body .player .progress {
-      margin-bottom: 10px; }
-      html body .player .progress input {
+    height: 80%;
+    overflow-x: hidden; }
+  body .player {
+    box-shadow: 0 0 1px 1px lightgray;
+    border-radius: 5px;
+    margin-top: 15rem;
+    height: 20%;
+    background-image: -webkit-linear-gradient(left, #14517D, #14517D 25%, white 25%, white 100%); }
+    body .player img {
+      cursor: pointer; }
+    body .player .controls-btn {
+      height: 100%;
+      padding-left: 30px; }
+      body .player .controls-btn h3 {
+        color: #3A9AC4; }
+    body .player .height {
+      height: 100%; }
+      body .player .height .play-btn {
+        position: relative;
         width: 100%;
-        margin-bottom: 5px; }
-      html body .player .progress #passed {
-        float: left; }
-      html body .player .progress #remaining {
-        float: right; }
+        top: 50%;
+        transform: translateY(-50%); }

@@ -21,8 +21,7 @@ const paths = {
   bower_js: [
     `bower_components/angular-audio/app/angular.audio.js`
   ],
-  bower_css: [
-  ]
+  bower_css: [  ]
 };
 
 gulp.task(`scss`, () => {

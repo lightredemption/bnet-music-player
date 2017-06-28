@@ -1,110 +1,60 @@
-html{
-  body {
-    text-align: center;
-    background: #292728;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    color: white;
+body {
+  background-color: #3598DB;
+  background-image: url('../img/blizz-wp.jpg');
+  font-family: 'Open Sans', sans-serif;
 
-    .playlist {
-      padding-top: 15px;
-      text-align: left;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-      margin-top: 0;
-      background: #242321;
-      opacity: 0.8;
-      height: 50vh;
-      overflow: scroll;
-      -webkit-transition: all .25s ease-out;
-      -moz-transition: all .25s ease-out;
-      -ms-transition: all .25s ease-out;
-      -o-transition: all .25s ease-out;
-      transition: all .25s ease-out;
-      .odd {
-        background-color: 313133;
-      }
-      .current {
-        color: #87604e;
-      }
-      .track{
-        padding: 15px 15px 15px 15px;
-        height: 10px;
-        line-height: 0.8;
-      }
-    }
+  .list {
+    box-shadow: 0 0 1px 1px lightgray;
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding-top: 20px;
+    height: 40%;
 
-    .player {
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      background: #242321;
-      opacity: 0.8;
-      margin-bottom: 0;
-      position: relative;
-      margin-top: 10vh;
-      height: 25vh;
-      padding-left: 15px;
-      padding-right: 15px;
-      .title {
-        text-align: center;
-        padding-top: 1vh;
-        color: white;
-        .tag {
-          text-transform: uppercase;
-        }
-      }
-      .control {
-        text-align: center;
-        color: white;
-        padding: 0 0 0 0;
-        height: 10vh;
-        .run {
-          -webkit-filter: invert(100%) !important;
-          filter: invert(100%) !important;
-        }
-        #repeat {
-          padding-top: 3vh;
-          position: absolute;
-          left: 15px;
-          -webkit-filter: invert(50%);
-          filter: invert(50%);
-          height: 5vh;
-        }
-        #shuffle {
-          padding-top: 3vh;
-          position: absolute;
-          right: 15px;
-          -webkit-filter: invert(50%);
-          filter: invert(50%);
-          height: 5vh;
-        }
-        #prev, #next {
-          padding-bottom: 1vh;
-          height: 7vh;
-        }
-        #play  {
-          height: 10vh;
-        }
-        img {
-          margin-top: 1vh;
-          -webkit-filter: invert(100%);
-          filter: invert(100%);
-        }
-      }
-      .progress {
-        margin-bottom: 10px;
-        input {
-          width: 100%;
-          margin-bottom: 5px;
-        }
-        #passed {
-          float: left;
-        }
-        #remaining {
-          float: right;
-        }
-      }
+    td {
+      cursor: pointer;
     }
   }
+
+  .tab-content {
+    overflow: scroll;
+    height: 80%;
+    overflow-x: hidden;
+  }
+
+  .player {
+    box-shadow: 0 0 1px 1px lightgray;
+    border-radius: 5px;
+    margin-top: 15rem;
+    height: 20%;
+    background-image: -webkit-linear-gradient(left, #14517D, #14517D 25%, white 25%, white 100%);
+
+    img {
+      cursor: pointer;
+    }
+
+    .controls-btn {
+        height: 100%;
+        padding-left: 30px;
+
+        h3 {
+          color: #3A9AC4;
+        }
+    }
+
+    .height {
+      height: 100%;
+
+      .play-btn {
+      position: relative;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      }
+
+    }
+    // Generated Range CSS
+
+  }
+
 }

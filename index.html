@@ -1,66 +1,92 @@
 <html ng-app="bnet-music-player" lang="en-us">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-  <link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link href="public/css/style.css" rel="stylesheet" />
 
   <title>Classic Battle.net Music</title>
 
   <script src="public/js/jquery.min.js"></script>
   <script src="public/js/angular.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
   <script src="public/js/bower.js"></script>
-
   <script src="public/js/app.js"></script>
 
 </head>
 
-<body ng-controller="BaseController">
+<body ng-controller="BaseController" class="container-fluid">
 
-  <div class="pure-u-1 pure-u-sm-1 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-4" ng-cloak>
-
-    <div class="player">
-
-      <div class="title">
-
-        <span class="tag">{{ current.tag }}</span><br/> {{ current.name }}
-
-      </div>
-
-      <div class="control">
-
-        <img id="repeat" ng-src="public/img/Repeat.png" alt="repeat" ng-click="togRepeat()" ng-class="{ 'run': repeat }"/>
-        <img id="prev" ng-src="public/img/Rewind.png" alt="rewind" ng-click="prev()" class="run"/>
-        <img id="play" ng-src="{{ nowPlaying && 'public/img/Pause.png' || 'public/img/Play.png' }}" alt="play" ng-click="ply()" class="run"/>
-        <img id="next" ng-src="public/img/Fast Forward.png" alt="forward" ng-click="next()" class="run"/>
-        <img id="shuffle" ng-src="public/img/Shuffle.png" alt="shuffle" ng-click="togShuffle()" ng-class="{ 'run': shuffle }"/>
-
-      </div>
-      <div class="progress">
-
-        <input type="range" min="0" max="1" step="0.01" ng-model="song.progress">
-        <span id="passed">{{ song.currentTime | secondsToDateTime | date:'mm:ss' }}</span>
-        <span id="remaining">{{ song.remaining + song.currentTime | secondsToDateTime | date:'mm:ss' }}</span>
-
-      </div>
-
-    </div>
-
-    <div class="playlist" ng-class="{ 'shown': listShown }">
-
-      <div ng-repeat="msc in music track by $index" ng-click="jump($index)">
-
-        <div ng-class-odd="'odd'" class="track">
-
-          <span ng-class="{ 'current': $index === position }">{{ msc.tag }} {{ msc.name }}</span>
-
+  <div ng-cloak>
+    <div class="col-sm-4 col-sm-offset-4 player">
+      <div class="row">
+        <div class="col-xs-3 height">
+          <img ng-src="{{ song.paused && 'public/img/play-circle.svg' || 'public/img/pause.svg' }}" alt="play" ng-click="song.paused ? song.play() : song.pause()"
+            class="play-btn img-responsive" />
         </div>
-
+        <div class="col-xs-9 controls-btn">
+          <h3>{{ current.artist }}</h3>
+          <h4>{{ current.title }}</h4>
+          <br/>
+          <img ng-src="public/img/skip-back.svg" alt="backp" ng-click="prev()">
+          <img ng-src="public/img/skip-forward.svg" alt="forward" ng-click="next()">
+          <span class="pull-right">{{ song.currentTime | trackTime }} / {{ song.remaining + song.currentTime | trackTime }}</span>          <br/> <br>
+          <img ng-src="{{ shuffle && 'public/img/shuffle - active.svg' || 'public/img/shuffle.svg'}}" alt="shuffle" ng-click="shuffleT()">
+          <img ng-src="{{ repeat && 'public/img/repeat - active.svg' || 'public/img/repeat.svg'}}" alt="repeat" ng-click="repeatT()">
+          <span class="pull-right"><img src="public/img/chevrons-down.svg" alt="list" ng-click="showList()"></span>
+        </div>
       </div>
-
+    </div>
+    <div class="col-sm-4 col-sm-offset-4 list">
+      <ul class="nav nav-pills">
+        <li class="active"><a data-toggle="pill" href="#sc">Starcraft</a></li>
+        <li><a data-toggle="pill" href="#d">Diablo</a></li>
+        <li><a data-toggle="pill" href="#d2">Diablo 2</a></li>
+        <li><a data-toggle="pill" href="#d2l">Diablo 2 - LOD</a></li>
+      </ul>
+      <div class="tab-content">
+        <div id="sc" class="tab-pane fade in active">
+          <table class="table table-hover">
+            <tr ng-repeat="song in music track by $index" ng-if="song.artist === 'StarCraft Soundtrack' || song.artist === 'StarCraft: Brood War Soundtrack'">
+              <td>
+                <span ng-click="jump($index)">{{song.title}}</span>
+                </td>
+            </tr>
+          </table>
+        </div>
+        <div id="d" class="tab-pane fade">
+          <table class="table table-hover">
+            <tr ng-repeat="song in music" ng-if="song.artist === 'Diablo Soundtrack'">
+              <td>
+                <span ng-click="jump($index)">{{song.title}}</span>
+                </td>
+            </tr>
+          </table>
+        </div>
+        <div id="d2" class="tab-pane fade">
+          <table class="table table-hover">
+            <tr ng-repeat="song in music" ng-if="song.artist === 'Diablo II Soundtrack'">
+              <td>
+                <span ng-click="jump($index)">{{song.title}}</span>
+                </td>
+            </tr>
+          </table>
+        </div>
+        <div id="d2l" class="tab-pane fade">
+          <table class="table table-hover">
+            <tr ng-repeat="song in music" ng-if="song.artist === 'Diablo II LOD Soundtrack'">
+              <td>
+                <span ng-click="jump($index)">{{song.title}}</span>
+                </td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
 
   </div>

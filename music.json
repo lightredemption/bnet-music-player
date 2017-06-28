@@ -1,87 +1,312 @@
 [
   {
-    "name": "Title Screen",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/title.mp3"
-  }, {
-    "name": "Terran 1",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/terran1.mp3"
-  }, {
-    "name": "Terran 2",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/terran2.mp3"
-  }, {
-    "name": "Terran 3",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/terran3.mp3"
-  }, {
-    "name": "Terran Ready Room",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/trdyroom.mp3"
-  }, {
-    "name": "Terran Defeat",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/tdefeat.mp3"
-  }, {
-    "name": "Terran Victory",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/tvict.mp3"
-  }, {
-    "name": "Protoss 1",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/Protoss1.mp3"
-  }, {
-    "name": "Protoss 2",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/Protoss2.mp3"
-  }, {
-    "name": "Protoss 3",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/Protoss3.mp3"
-  }, {
-    "name": "Protoss Ready Room",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/prdyroom.mp3"
-  }, {
-    "name": "Protoss Defeat",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/pdefeat.mp3"
-  }, {
-    "name": "Protoss Victory",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/pvict.mp3"
-  }, {
-    "name": "Zerg 1",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/Zerg1.mp3"
-  }, {
-    "name": "Zerg 2",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/Zerg2.mp3"
-  }, {
-    "name": "Zerg 3",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/Zerg3.mp3"
-  }, {
-    "name": "Zerg Ready Room",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/zrdyroom.mp3"
-  }, {
-    "name": "Zerg Defeat",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/zdefeat.mp3"
-  }, {
-    "name": "Zerg Victory",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/zvict.mp3"
-  }, {
-    "name": "Radio Free Zerg",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/RadioFreeZerg.mp3"
-  }, {
-    "name": "Brood War Intro",
-    "tag": "sc",
-    "url": "http://classic.battle.net/supersecrest/BroodWarIntro.mp3"
+    "title": "SC: StarCraft Title Screen",
+    "audioURL": "/supersecrest/title.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Terran 1",
+    "audioURL": "/supersecrest/terran1.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Terran 2",
+    "audioURL": "/supersecrest/terran2.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Terran 3",
+    "audioURL": "/supersecrest/terran3.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Terran Ready Room",
+    "audioURL": "/supersecrest/trdyroom.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Terran Defeat",
+    "audioURL": "/supersecrest/tdefeat.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Terran Victory",
+    "audioURL": "/supersecrest/tvict.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Protoss 1",
+    "audioURL": "/supersecrest/Protoss1.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Protoss 2",
+    "audioURL": "/supersecrest/Protoss2.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Protoss 3",
+    "audioURL": "/supersecrest/Protoss3.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Protoss Ready Room",
+    "audioURL": "/supersecrest/prdyroom.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Protoss Defeat",
+    "audioURL": "/supersecrest/pdefeat.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Protoss Victory",
+    "audioURL": "/supersecrest/pvict.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Zerg 1",
+    "audioURL": "/supersecrest/Zerg1.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Zerg 2",
+    "audioURL": "/supersecrest/Zerg2.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Zerg 3",
+    "audioURL": "/supersecrest/Zerg3.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Zerg Ready Room",
+    "audioURL": "/supersecrest/zrdyroom.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Zerg Defeat",
+    "audioURL": "/supersecrest/zdefeat.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Zerg Victory",
+    "audioURL": "/supersecrest/zvict.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "SC: Radio Free Zerg",
+    "audioURL": "/supersecrest/RadioFreeZerg.mp3",
+    "artist": "StarCraft Soundtrack"
+  },
+  {
+    "title": "BW: Brood War Intro",
+    "audioURL": "/supersecrest/broodwarintro.mp3",
+    "artist": "StarCraft: Brood War Soundtrack"
+  },
+  {
+    "title": "D1: Intro by Matt Uelmen",
+    "audioURL": "/supersecrest/intro.mp3",
+    "artist": "Diablo Soundtrack"
+  },
+  {
+    "title": "D1: Town by Matt Uelmen",
+    "audioURL": "/supersecrest/town.mp3",
+    "artist": "Diablo Soundtrack"
+  },
+  {
+    "title": "D1: Dungeon by Matt Uelmen",
+    "audioURL": "/supersecrest/dungeon.mp3",
+    "artist": "Diablo Soundtrack"
+  },
+  {
+    "title": "D1: Catacombs by Matt Uelmen",
+    "audioURL": "/supersecrest/catacombs.mp3",
+    "artist": "Diablo Soundtrack"
+  },
+  {
+    "title": "D1: Caves by Matt Uelmen",
+    "audioURL": "/supersecrest/caves.mp3",
+    "artist": "Diablo Soundtrack"
+  },
+  {
+    "title": "D1: Hell by Matt Uelmen",
+    "audioURL": "/supersecrest/helloriginal.mp3",
+    "artist": "Diablo Soundtrack"
+  },
+  {
+    "title": "D2: Tristram by Matt Uelmen",
+    "audioURL": "/supersecrest/tristram.mp3",
+    "artist": "Diablo Soundtrack"
+  },
+  {
+    "title": "D2: Wilderness by Matt Uelmen",
+    "audioURL": "/supersecrest/wilderness.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Rogue by Matt Uelmen",
+    "audioURL": "/supersecrest/rogue.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Sisters by Matt Uelmen",
+    "audioURL": "/supersecrest/sisters.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Spider by Matt Uelmen",
+    "audioURL": "/supersecrest/spider.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Jungle by Matt Uelmen",
+    "audioURL": "/supersecrest/jungle.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Zakarum by Matt Uelmen",
+    "audioURL": "/supersecrest/zakarum.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Desert by Matt Uelmen",
+    "audioURL": "/supersecrest/desert.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Toru by Matt Uelmen",
+    "audioURL": "/supersecrest/toru.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Sanctuary by Matt Uelmen",
+    "audioURL": "/supersecrest/sanctuary.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Crypt by Matt Uelmen",
+    "audioURL": "/supersecrest/crypt.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Tombs by Matt Uelmen",
+    "audioURL": "/supersecrest/tombs.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Monastery by Matt Uelmen",
+    "audioURL": "/supersecrest/monastery.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Cave by Matt Uelmen",
+    "audioURL": "/supersecrest/cave.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Mesa by Matt Uelmen",
+    "audioURL": "/supersecrest/mesa.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Leoric by Matt Uelmen",
+    "audioURL": "/supersecrest/leoric.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Coda by Matt Uelmen",
+    "audioURL": "/supersecrest/coda.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Roger and me by Matt Uelmen",
+    "audioURL": "/supersecrest/rogerandme.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Maggot by Matt Uelmen",
+    "audioURL": "/supersecrest/maggot.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Docks by Matt Uelmen",
+    "audioURL": "/supersecrest/docks.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Sewer by Matt Uelmen",
+    "audioURL": "/supersecrest/sewer.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Kurast by Matt Uelmen",
+    "audioURL": "/supersecrest/kurast.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Mephisto by Matt Uelmen",
+    "audioURL": "/supersecrest/Mephisto.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Outtake 1 by Matt Uelmen",
+    "audioURL": "/supersecrest/outtake1.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Outtake 2 by Matt Uelmen",
+    "audioURL": "/supersecrest/outtake2.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Outtake 3 by Matt Uelmen",
+    "audioURL": "/supersecrest/outtake3.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Outtake 4 by Matt Uelmen",
+    "audioURL": "/supersecrest/outtake4.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: Temple by Matt Uelmen",
+    "audioURL": "/supersecrest/temple.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2: The Cain Rap",
+    "audioURL": "/supersecrest/thecainrap.mp3",
+    "artist": "Diablo II Soundtrack"
+  },
+  {
+    "title": "D2 LOD: Baal by Matt Uelmen",
+    "audioURL": "/supersecrest/baal.mp3",
+    "artist": "Diablo II LOD Soundtrack"
+  },
+  {
+    "title": "D2 LOD: Fortress by Matt Uelmen",
+    "audioURL": "/supersecrest/fortress.mp3",
+    "artist": "Diablo II LOD Soundtrack"
+  },
+  {
+    "title": "D2 LOD: Halls by Matt Uelmen",
+    "audioURL": "/supersecrest/halls.mp3",
+    "artist": "Diablo II LOD Soundtrack"
+  },
+  {
+    "title": "D2 LOD: Ancients by Matt Uelmen",
+    "audioURL": "/supersecrest/ancients.mp3",
+    "artist": "Diablo II LOD Soundtrack"
+  },
+  {
+    "title": "D2 LOD: Siege by Matt Uelmen",
+    "audioURL": "/supersecrest/siege.mp3",
+    "artist": "Diablo II LOD Soundtrack"
+  },
+  {
+    "title": "D2 LOD: Ice Caves by Matt Uelmen",
+    "audioURL": "/supersecrest/icecaves.mp3",
+    "artist": "Diablo II LOD Soundtrack"
   }
 ]

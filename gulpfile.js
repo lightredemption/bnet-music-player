@@ -19,7 +19,8 @@ const paths = {
     `bower_components/angular/angular.min.js`
   ],
   bower_js: [
-    `bower_components/angular-audio/app/angular.audio.js`
+    `bower_components/angular-audio/app/angular.audio.js`,
+    `bower_components/angular-animate/angular-animate.min.js`
   ],
   bower_css: [  ]
 };

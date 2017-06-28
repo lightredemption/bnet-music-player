@@ -38,11 +38,11 @@
           <span class="pull-right">{{ song.currentTime | trackTime }} / {{ song.remaining + song.currentTime | trackTime }}</span>          <br/> <br>
           <img ng-src="{{ shuffle && 'public/img/shuffle - active.svg' || 'public/img/shuffle.svg'}}" alt="shuffle" ng-click="shuffleT()">
           <img ng-src="{{ repeat && 'public/img/repeat - active.svg' || 'public/img/repeat.svg'}}" alt="repeat" ng-click="repeatT()">
-          <span class="pull-right"><img src="public/img/chevrons-down.svg" alt="list" ng-click="showList()"></span>
+          <span class="pull-right"><img ng-src="{{ listShown && 'public/img/chevrons-up.svg' || 'public/img/chevrons-down.svg'}}" alt="list" ng-click="showList()"></span>
         </div>
       </div>
     </div>
-    <div class="col-sm-4 col-sm-offset-4 list">
+    <div class="col-sm-4 col-sm-offset-4 list animate-show animate-hide" ng-show="listShown">
       <ul class="nav nav-pills">
         <li class="active"><a data-toggle="pill" href="#sc">Starcraft</a></li>
         <li><a data-toggle="pill" href="#d">Diablo</a></li>

@@ -1,4 +1,4 @@
-var app = angular.module('bnet-music-player', [`ngAudio`]);
+var app = angular.module('bnet-music-player', [`ngAudio`, `ngAnimate`]);
 app.controller(`BaseController`, [`$scope`, `ngAudio`, `$http`, `$interval`,
   ($scope, ngAudio, $http, $interval) => {
 
